@@ -16,10 +16,11 @@ at this point.
 * execute `prep.sh`
 * execute `fetch-sources.sh`
 * execute `final-prep.sh`
+* su to lfs (`su - lfs`) for next steps
+* execute `final-prep-as-lfs.sh`
 * Set up MAKEFLAGS if desired (http://www.linuxfromscratch.org/lfs/view/stable/chapter04/aboutsbus.html)
-  Maybe put in the .bashrc for lfs
+  Maybe put in the .bashrc for user lfs
 * Add the location of the scripts to the $PATH in ~lfs/.bashrc
-* su to lfs (`su - lfs`) for next step
 * execute `build-stage1.sh` (See Errata about executing last command in the script.)
 
 ## Errata
@@ -28,3 +29,9 @@ at this point.
 * At end of build-stage1.sh the user must execute the `chown` command in whatever manner
   is permitted given the root user setup. (On my system there is no root and 'lfs' does
   not have `sudo` privileges.)
+
+## TODO
+  
+  * Check for `/tools` before linking to it in `final-prep.sh`
+  * Set perms on `/tools`
+  
