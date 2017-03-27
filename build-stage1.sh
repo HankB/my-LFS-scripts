@@ -709,6 +709,8 @@ then
 	tar xf patch-2.7.5.tar.xz 
 	cd patch-2.7.5
 
+	./configure --prefix=/tools
+
 	make
 	make check
 	make install
@@ -765,8 +767,9 @@ if [ ! -e completed/tar-1.29 ]
 then
 
 	tar xf tar-1.29.tar.xz 
-	cd 
+	cd tar-1.29 
 
+	./configure --prefix=/tools
 
 	make
 	make check
@@ -804,8 +807,7 @@ if [ ! -e completed/util-linux-2.29.1 ]
 then
 
 	tar xf util-linux-2.29.1.tar.xz 
-	cd 
-
+	cd util-linux-2.29.1
 
 	./configure --prefix=/tools                \
 		    --without-python               \
@@ -851,6 +853,9 @@ rm -rf /tools/{,share}/{info,man,doc}
 
 ### 5.37. Changing Ownership
 
-chown -R root:root $LFS/tools
+# Following command must be run after the script exits
+# since user 'lfs' does not have sudo privileges and
+# this install did not create a 'root' user.
+sudo chown -R root:root $LFS/tools
 
 
