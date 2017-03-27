@@ -33,3 +33,7 @@ else
 
 	echo lfs user already exists
 fi
+
+# custom - create the $LFS/completed Directory
+sudo mkdir $LFS/completed
+sudo chown -v lfs $LFS/completed
