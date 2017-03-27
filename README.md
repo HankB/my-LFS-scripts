@@ -7,10 +7,10 @@ at this point.
 
 ## Usage
 
-* Edit set-LFS.sh to point to where you plan to mount the LFS partition
-* Edit prep.sh and set the line `export LFS_DEV=/dev/sda7` to point to
-  the partition you plan to use. (The script `prep.sh` will not create the
-  partition but will format it as EXT4 if it is not mounted.)
+* Edit set-LFS.sh to point to where you plan to mount the LFS partition. Also set LFS_DEV to
+  point to the partition where the LFS partition will be mounted. If it is not mounted, the script
+  `prep.sh` will format the partition as EXT4 using the instructions at
+  http://www.linuxfromscratch.org/lfs/view/6.5/chapter02/creatingfilesystem.html.
 * It may be convenient to symlink the scripts to your `~/bin` directory
   or add the directory they're in to your `$PATH`
 * execute `prep.sh`

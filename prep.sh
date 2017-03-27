@@ -10,10 +10,8 @@
 # Update - to be safe, format the partition for LFS as described
 # at http://www.linuxfromscratch.org/lfs/view/6.5/chapter02/creatingfilesystem.html
 
-################## Specific for my install
-export LFS_DEV=/dev/sda7
 
-# set LFS env variable
+# set LFS (and other) env variables
 source set-LFS.sh
 # todo - make certain not blank
 
@@ -157,11 +155,4 @@ then
   echo $LFS does not exist
   exit
 fi 
-
-
-
-
-
-
-
 
