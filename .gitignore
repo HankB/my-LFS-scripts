@@ -3,4 +3,4 @@ library-check.sh
 notes.txt
 grub-notes
 scratch
-
+*.swp
