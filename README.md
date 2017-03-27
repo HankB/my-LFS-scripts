@@ -20,4 +20,11 @@ at this point.
   Maybe put in the .bashrc for lfs
 * Add the location of the scripts to the $PATH in ~lfs/.bashrc
 * su to lfs (`su - lfs`) for next step
-* execute `build-stage1.sh`
+* execute `build-stage1.sh` (See Errata about executing last command in the script.)
+
+## Errata
+
+* Chapter 5.22 Findutils `test-lock` hangs using 100% processor.
+* At end of build-stage1.sh the user must execute the `chown` command in whatever manner
+  is permitted given the root user setup. (On my system there is no root and 'lfs' does
+  not have `sudo` privileges.)
