@@ -19,6 +19,8 @@ set -e
 
 cd $LFS/sources
 
+# Mark the start time
+touch completed/start-build
 
 ### Binutils (5.4. Binutils-2.27 - Pass 1)
 
