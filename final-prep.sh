@@ -9,6 +9,7 @@ source set-LFS.sh
 if [ ! -d $LFS/tools ]
 then
 	sudo mkdir -v $LFS/tools
+	sudo 
 	sudo ln -sv $LFS/tools /
 else
 	echo $LFS/tools exists
@@ -23,17 +24,18 @@ then
 	echo enter password for user lfs
 	sudo passwd lfs
 
-	sudo chown -v lfs $LFS/tools
-
-	sudo chown -v lfs $LFS/sources
 
 	su - lfs -c /home/hbarta/bin/final-prep-as-lfs.sh
 
 else
-
 	echo lfs user already exists
 fi
 
+# set lfs as owner of .../tools and .../sources
+sudo chown -v lfs $LFS/tools
+
+sudo chown -v lfs $LFS/sources
+
 # custom - create the $LFS/completed Directory
-sudo mkdir $LFS/completed
-sudo chown -v lfs $LFS/completed
+sudo mkdir $LFS/sources/completed
+sudo chown -v lfs $LFS/sources/completed
