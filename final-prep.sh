@@ -9,7 +9,6 @@ source set-LFS.sh
 if [ ! -d $LFS/tools ]
 then
 	sudo mkdir -v $LFS/tools
-	sudo 
 	sudo ln -sv $LFS/tools /
 else
 	echo $LFS/tools exists
