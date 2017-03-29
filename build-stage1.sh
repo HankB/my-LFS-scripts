@@ -29,7 +29,8 @@ then
 
 	tar xf binutils-2.27.tar.bz2
 	cd binutils-2.27
-	mkdir build
+
+	mkdir -v build
 	cd build
 
 	../configure --prefix=/tools\
@@ -471,7 +472,7 @@ then
 
 	./configure --prefix=/tools
 	make
-	make check
+	# make check
 	make install
 	cd ..
 	rm -rf bison-3.0.4
@@ -589,7 +590,7 @@ then
 	./configure --prefix=/tools
 
 	make
-	make check
+	# make check
 	make install
 
 	cd .. 
@@ -634,7 +635,7 @@ then
 	./configure --prefix=/tools
 
 	make
-	make check
+	# make check
 	make install
 
 	cd ..
@@ -654,7 +655,7 @@ then
 	./configure --prefix=/tools
 
 	make
-	make check
+	# make check
 	make install
 
 	cd ..
@@ -674,7 +675,7 @@ then
 	./configure --prefix=/tools
 
 	make
-	make check
+	# make check
 	make install
 
 	cd ..
@@ -694,7 +695,7 @@ then
 	./configure --prefix=/tools --without-guile
 
 	make
-	make check
+	# make check
 	make install
 
 	cd ..
@@ -714,7 +715,7 @@ then
 	./configure --prefix=/tools
 
 	make
-	make check
+	# make check
 	make install
 
 	cd ..
@@ -730,6 +731,8 @@ then
 
 	tar xf perl-5.24.1.tar.bz2 
 	cd perl-5.24.1
+
+	sh Configure -des -Dprefix=/tools -Dlibs=-lm
 
 	make
 
@@ -754,7 +757,7 @@ then
 	./configure --prefix=/tools
 
 	make
-	make check
+	# make check
 	make install
 
 	cd ..
@@ -774,7 +777,7 @@ then
 	./configure --prefix=/tools
 
 	make
-	make check
+	# make check
 	make install
 
 	cd ..
@@ -794,7 +797,7 @@ then
 	./configure --prefix=/tools
 
 	make
-	make check
+	# make check
 	make install
 
 	cd ..
@@ -837,7 +840,7 @@ then
 	./configure --prefix=/tools
 
 	make
-	make check
+	# make check
 	make install
 
 	cd ..
@@ -859,5 +862,7 @@ rm -rf /tools/{,share}/{info,man,doc}
 # since user 'lfs' does not have sudo privileges and
 # this install did not create a 'root' user.
 sudo chown -R root:root $LFS/tools
+
+echo "successful completion!"
 
 
